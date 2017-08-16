@@ -39,13 +39,6 @@ public class MainActivity extends AppCompatActivity {
                                 s.putExtra(android.content.Intent.EXTRA_TEXT, "https://github.com/rebus007/BottomDialog/issues");
                                 startActivity(Intent.createChooser(s, getResources().getText(R.string.action_social_share)));
                                 return true;
-                            case R.id.action_content_add:
-                                Item item = new Item();
-                                item.setTitle("New element");
-                                item.setIcon(getResources().getDrawable(R.drawable.ic_action_action_bug_report));
-                                item.setId(100);
-                                dialog.addItem(item);
-                                return false;
                             case R.id.action_delete:
                                 finish();
                                 return true;
@@ -54,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
                                 i.setData(Uri.parse("https://github.com/rebus007/BottomDialog/issues"));
                                 startActivity(i);
                                 return true;
+                            case R.id.action_content_add:
+                                Item item = new Item();
+                                item.setTitle("New element");
+                                item.setIcon(getResources().getDrawable(R.drawable.ic_action_action_bug_report));
+                                item.setId(100);
+                                dialog.addItem(item);
+                                return false;
                             case R.id.ic_github:
                                 Intent g = new Intent(Intent.ACTION_VIEW);
                                 g.setData(Uri.parse("https://github.com/rebus007/BottomDialog"));
